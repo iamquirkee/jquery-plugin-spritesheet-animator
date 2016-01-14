@@ -11,6 +11,7 @@
 var gulp = require('gulp');
 
 // Utilities
+var header = require('gulp-header');
 var rename = require("gulp-rename");
 var plumber = require('gulp-plumber');
 var stylish = require('jshint-stylish');
@@ -23,6 +24,35 @@ var jshintConfig = packageJSON.jshintConfig;
 var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 
+
+/***
+ *        __
+ *       / /_  ____ _____  ____  ___  _____
+ *      / __ \/ __ `/ __ \/ __ \/ _ \/ ___/
+ *     / /_/ / /_/ / / / / / / /  __/ /
+ *    /_.___/\__,_/_/ /_/_/ /_/\___/_/
+ *
+ */
+
+var banner =
+
+    '/***\n' +
+    ' *                  __                                          __  __    _                __\n' +
+    ' *      ____ ______/ /__   ____ ___  ___     ____ _____  __  __/ /_/ /_  (_)___  ____ _   / /\n' +
+    ' *     / __ `/ ___/ //_/  / __ `__ \\/ _ \\   / __ `/ __ \\/ / / / __/ __ \\/ / __ \\/ __ `/  / /\n' +
+    ' *    / /_/ (__  ) ,<    / / / / / /  __/  / /_/ / / / / /_/ / /_/ / / / / / / / /_/ /  /_/\n' +
+    ' *    \\__,_/____/_/|_|  /_/ /_/ /_/\\___/   \\__,_/_/ /_/\\__, /\\__/_/ /_/_/_/ /_/\\__, /  (_)\n' +
+    ' *                                                    /____/                  /____/\n' +
+    ' *\n' +
+    ' *  Website: http://quirkee.sg\n' +
+    ' *  Codepen: http://codepen.io/iamquirkee\n' +
+    ' *  Github: https://github.com/iamquirkee\n' +
+    ' *  Email : iam@quirkee.sg\n' +
+    ' *\n' +
+    ' *  I\'m Kenneth, an Interaction developer based in Singapore.\n' +
+    ' *  Feel free to ask me anything or give leave me feedback :D\n' +
+    ' *\n' +
+    ' */\n';
 
 /***
  *        __          _ __    __   __             __
@@ -41,6 +71,7 @@ gulp.task('default', function () {
         }))
         .pipe(jshint(jshintConfig))
         .pipe(jshint.reporter(stylish))
+        .pipe(header(banner))
         .pipe(gulp.dest('dist'))
         .pipe(uglify({
             mangle: true
@@ -48,6 +79,7 @@ gulp.task('default', function () {
         .pipe(rename({
             suffix: ".min"
         }))
+        .pipe(header(banner))
         .pipe(gulp.dest('dist'))
 
 });
