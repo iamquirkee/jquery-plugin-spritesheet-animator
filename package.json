@@ -1,0 +1,48 @@
+{
+  "name": "sprite-sheet-animator",
+  "version": "1.0.0",
+  "description": "Jquery plugin for animating single and multiple image sprite sheets",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamquirkee/sprite-sheet-animator.git"
+  },
+  "keywords": [
+    "sprite",
+    "sheet",
+    "animation",
+    "animator",
+    "jquery",
+    "plugin"
+  ],
+  "author": [
+    {
+      "name": "Kenneth Ho",
+      "email": "iam@quirkee.sg",
+      "url": "http://quirkee.sg"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamquirkee/sprite-sheet-animator/issues"
+  },
+  "homepage": "https://github.com/iamquirkee/sprite-sheet-animator#readme",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "gulp-jshint": "^2.0.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.1",
+    "jshint-stylish": "^2.1.0"
+  },
+  "jshintConfig": {
+    "strict": true,
+    "undef": true,
+    "unused": true,
+    "globals": {
+      "console": false
+    }
+  }
+}
