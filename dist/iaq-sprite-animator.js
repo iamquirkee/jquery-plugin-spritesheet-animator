@@ -15,3 +15,31 @@
  *  Feel free to ask me anything or give leave me feedback :D
  *
  */
+(function ($) {
+
+    "use strict";
+
+    $.fn.iaqSprite = function (options) {
+
+        var settings = $.extend({}, $.fn.hilight.defaultSettings, options);
+
+        if (settings.debug) {
+            debugConsole("initializing...");
+        }
+
+        // return object
+        return this;
+
+    };
+
+    // settings
+    $.fn.iaqSprite.defaultSettings = {
+        debug: "false",
+        type: "single" // Single || Double
+    };
+
+    function debugConsole(str) {
+        window.console.log("iaqSpriteAnimation :: " + str);
+    }
+
+}(jQuery));

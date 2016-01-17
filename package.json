@@ -43,7 +43,9 @@
     "undef": true,
     "unused": true,
     "globals": {
-      "console": false
+      "console": false,
+      "window": true,
+      "jQuery": true
     }
   }
 }
